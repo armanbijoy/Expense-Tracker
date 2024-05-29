@@ -1,4 +1,4 @@
-const Expenseitem = () => {
+const ExpenseItem = () => {
     return (
       <div>
         <div>May 29th 2024</div>
@@ -13,5 +13,5 @@ const Expenseitem = () => {
     );
   };
   
-  export default Expenseitem;
+  export default ExpenseItem;
   
