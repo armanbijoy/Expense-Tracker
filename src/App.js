@@ -1,9 +1,11 @@
+import { useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import Expenseitem from "./components/ExpenseItem";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
+  const [filteredYear, setFilteredYear] = useState('2020')
   const expenses = [
     {
       id: "e1",
@@ -25,10 +27,26 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  let filteredInfoText = '2019,2021 & 2022'
+
+  if(filteredYear === '2019'){
+    filteredInfoText='2020,2021,2022'
+  }else if(filteredYear ==='2021'){
+    filteredInfoText('2019,2020,2022')
+  }else{
+    filteredInfoText='2019,2020 &2021'
+  }
+
+  const addExpenseHandler = expense =>{
+    console.log("In App.js")
+    console.log(expense)
+  }
   return (
     <Card>
       <h2>Lets Get Started</h2>
-      <NewExpense />
+      <NewExpense onAddExpense = {addExpenseHandler} />
+       <p>Data for 2019,2021,2023 is hidden</p>
       <Expenseitem
         title={expenses[0].title}
         amount={expenses[0].amount}

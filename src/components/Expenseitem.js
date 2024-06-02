@@ -5,7 +5,7 @@ import { useState } from "react";
 const ExpenseItem = (props) => {
  
  const [title, setTitle] = useState(props.title)
- console.log('ExpenseItem Eveliated By React')
+ console.log('ExpenseItem Eveliated By React ')
 
  //let title = props.title
 
